@@ -1,0 +1,34 @@
+========================================
+  ЧТО УСТАНОВИТЬ НА КОМПЬЮТЕР (без npm)
+========================================
+
+Проект работает на PHP + MySQL. npm и Node.js не нужны.
+
+1) PHP
+   - Скачать: https://windows.php.net/download/
+   Выбери "VS16 x64 Thread Safe" (ZIP), распакуй в папку, например C:\php
+   - Включи драйвер MySQL (иначе будет "could not find driver"):
+     В C:\php открой php.ini (если нет — скопируй php.ini-development как php.ini).
+     Найди ;extension=pdo_mysql и убери точку с запятой: extension=pdo_mysql
+     Сохрани и перезапусти start.bat.
+   - PATH — это НЕ папка с именем "path"! Это настройка Windows.
+     Добавить папку с php.exe в PATH:
+     Win+R → введи sysdm.cpl → Enter →
+     вкладка "Дополнительно" → "Переменные среды" →
+     в блоке "Системные переменные" выбери "Path" → "Изменить" →
+     "Создать" → вставь путь к папке, где лежит php.exe (например C:\php) → ОК везде.
+     Потом закрой все окна CMD и открой start.bat снова.
+   - Либо поставь готовый набор (там уже есть и PHP, и MySQL):
+     OpenServer: https://ospanel.io/
+     XAMPP:      https://www.apachefriends.org/
+
+2) MySQL
+   - Нужен запущенный MySQL (локально или на хостинге).
+   - Если ставишь OpenServer или XAMPP — MySQL уже входит в набор.
+   - В config.php уже прописано подключение к твоей БД (u3429662_test_system и т.д.). Если БД на удалённом хостинге — просто запусти MySQL там и создай базу; локально PHP и MySQL могут быть из OpenServer/XAMPP.
+
+3) Запуск сайта
+   - Запусти start.bat в папке проекта.
+   - В браузере открой http://localhost:8000/install.php (один раз), потом http://localhost:8000
+
+npm устанавливать не нужно.

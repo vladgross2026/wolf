@@ -1,0 +1,7 @@
+{
+  "name": "wlf",
+  "private": true,
+  "scripts": {
+    "start": "php -S localhost:8000 -t ."
+  }
+}
